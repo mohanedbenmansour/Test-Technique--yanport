@@ -1,0 +1,42 @@
+<div class="container">
+
+  <div class="form">
+    <h1>Mohaned Benmansour</h1>
+    <h2>mohaned.benmansour@esprit.tn</h2>
+
+<div>
+  <p>Dimension de la grille</p>
+  <input type="number" [(ngModel)]="xMap" >
+  <input type="number" [(ngModel)]="yMap" >
+  
+</div>
+   
+   <div>
+    <p>Position initiale de l’aspirateur</p>
+    
+    <input type="number" [(ngModel)]="xAspirateur" >
+    <input type="number" [(ngModel)]="yAspirateur" >
+    <select name="orientation"  [(ngModel)]="orientation">
+      <option value="N">North</option>
+      <option value="S">South</option>
+      <option value="E">East</option>
+      <option value="W">West</option>
+    </select>
+   </div>
+    
+    
+  <div>
+    <p>Instructions</p>
+    <button (click)="addToInstruction('D')" style="background-color: #568C82;">Droite</button>
+    <button (click)="addToInstruction('G')"  style="background-color: #91D9CC;">Gauche</button>
+    <button (click)="addToInstruction('A')" style="background-color: #D9D9D9;">Avant</button>
+    
+    <p>
+      les instructions: {{instructions}}
+    </p>
+  </div>
+    
+    <button (click)="ShowFinalPosition()">Enregister</button>
+    <p *ngIf="submit" class="result">Position Final : x= {{xAspirateur}} y= {{yAspirateur}} orientation={{orientation}} </p>
+  </div>
+</div>
